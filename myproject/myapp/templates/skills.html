@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Welcome to My World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .toolbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #0056b3;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .toolbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+            padding: 10px;
+        }
+
+        .toolbar a:hover {
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0056b3;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .skills-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .skills-item {
+            flex-basis: 30%;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .skills-item h3 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .skills-item h3::after {
+            content: "+";
+            font-size: 18px;
+            color: #0056b3;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .skills-item.open h3::after {
+            content: "-";
+        }
+
+        .skills-icon {
+            font-size: 32px;
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+
+        .skills-content {
+            display: none;
+            padding-top: 10px;
+        }
+
+        .skills-item.open .skills-content {
+            display: block;
+        }
+
+        .skills-item p {
+            font-size: 14px;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .toolbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .toolbar a {
+                padding: 10px 0;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .skills-row {
+                flex-direction: column;
+            }
+
+            .skills-item {
+                flex-basis: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toolbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'experience' %}">Experience</a>
+        <a href="{% url 'skills' %}">Skills</a>
+        <a href="{% url 'education' %}">Education</a>
+        <a href="{% url 'project' %}">Projects</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'logout' %}">Logout</a> <!-- Logout button -->
+    </div>
+    <div class="container">
+        <h2>My Skills</h2>
+
+        <div class="skills-row">
+            <div class="skills-item">
+                <i class="fas fa-code skills-icon"></i>
+                <h3>Programming Languages</h3>
+                <div class="skills-content">
+                    <p><strong>Python:</strong> Proficient in Python with over six months of experience. Skilled in writing clean, efficient, and well-documented code. Experienced in developing backend applications and data analysis.</p>
+                    <p><strong>C:</strong> Strong understanding of C programming, with experience in system-level programming and embedded systems.</p>
+                </div>
+            </div>
+
+            <div class="skills-item">
+                <i class="fas fa-cogs skills-icon"></i>
+                <h3>Frameworks</h3>
+                <div class="skills-content">
+                    <p><strong>Django:</strong> Experienced in using Django for web development. Capable of building robust web applications, implementing REST APIs, and managing databases efficiently.</p>
+                </div>
+            </div>
+
+            <div class="skills-item">
+                <i class="fas fa-laptop-code skills-icon"></i>
+                <h3>Libraries</h3>
+                <div class="skills-content">
+                    <p><strong>NumPy, Pandas:</strong> Proficient in using these libraries for data manipulation and analysis. Experienced in handling large datasets and performing complex computations.</p>
+                    <p><strong>Matplotlib, Seaborn:</strong> Skilled in data visualization, creating informative and aesthetically pleasing charts and graphs.</p>
+                    <p><strong>Requests, BeautifulSoup:</strong> Experienced in web scraping and working with APIs to collect and analyze data from the web.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-row">
+            <div class="skills-item">
+                <i class="fas fa-laptop skills-icon"></i>
+                <h3>Front-End Technologies</h3>
+                <div class="skills-content">
+                    <p><strong>HTML, CSS:</strong> Proficient in creating responsive and accessible web interfaces. Skilled in modern CSS techniques and frameworks.</p>
+                    <p><strong>JavaScript, AngularJS:</strong> Experienced in adding interactivity and dynamic content to web pages. Knowledgeable in using AngularJS for building single-page applications.</p>
+                </div>
+            </div>
+
+            <div class="skills-item">
+                <i class="fas fa-database skills-icon"></i>
+                <h3>Databases</h3>
+                <div class="skills-content">
+                    <p><strong>MySQL:</strong> Proficient in designing and managing relational databases. Skilled in writing complex SQL queries and optimizing database performance.</p>
+                </div>
+            </div>
+
+            <div class="skills-item">
+                <i class="fas fa-cloud-upload-alt skills-icon"></i>
+                <h3>Deployment Platforms</h3>
+                <div class="skills-content">
+                    <p><strong>Heroku:</strong> Experienced in deploying web applications on Heroku. Knowledgeable in managing environment variables, scaling applications, and monitoring performance.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-row">
+            <div class="skills-item">
+                <i class="fas fa-git skills-icon"></i>
+                <h3>Version Control</h3>
+                <div class="skills-content">
+                    <p><strong>Git, GitHub:</strong> Proficient in version control using Git and GitHub. Experienced in collaborative development, managing branches, and resolving merge conflicts.</p>
+                </div>
+            </div>
+
+            <div class="skills-item">
+                <i class="fas fa-tools skills-icon"></i>
+                <h3>Development Tools</h3>
+                <div class="skills-content">
+                    <p><strong>PyCharm, VS Code:</strong> Proficient in using PyCharm and Visual Studio Code for software development. Skilled in configuring IDEs, using extensions, and enhancing productivity.</p>
+                    <p><strong>Arduino IDE:</strong> Experienced in developing embedded systems and microcontroller-based projects using Arduino IDE.</p>
+                </div>
+            </div>
+
+            <div class="skills-item">
+                <i class="fas fa-desktop skills-icon"></i>
+                <h3>Operating Systems</h3>
+                <div class="skills-content">
+                    <p><strong>Windows, Ubuntu, Kali Linux:</strong> Proficient in using multiple operating systems for development, testing, and security purposes. Skilled in navigating command-line interfaces and configuring system environments.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-row">
+            <div class="skills-item">
+                <i class="fas fa-cogs skills-icon"></i>
+                <h3>Additional Skills</h3>
+                <div class="skills-content">
+                    <p><strong>Advanced Excel:</strong> Experienced in using Excel for data analysis, reporting, and automation.</p>
+                    <p><strong>Web Scraping:</strong> Skilled in extracting data from websites using Python libraries like BeautifulSoup and Scrapy.</p>
+                    <p><strong>REST API:</strong> Knowledgeable in designing and consuming RESTful APIs for web services.</p>
+                    <p><strong>OOP Concepts:</strong> Strong understanding of Object-Oriented Programming principles and their application in software development.</p>
+                </div>
+            </div>
+
+            <div class="skills-item">
+                <i class="fas fa-language skills-icon"></i>
+                <h3>Language Skills</h3>
+                <div class="skills-content">
+                    <p><strong>Tamil:</strong> Native speaker with excellent proficiency in reading, writing, and speaking.</p>
+                    <p><strong>English:</strong> Proficient in reading, writing, and speaking. Capable of communicating complex ideas effectively in both written and spoken formats.</p>
+                </div>
+            </div>
+
+            <div class="skills-item">
+                <i class="fas fa-users skills-icon"></i>
+                <h3>Soft Skills</h3>
+                <div class="skills-content">
+                    <p><strong>Communication:</strong> Strong communication skills, both verbal and written, allowing for effective collaboration and presentation of ideas.</p>
+                    <p><strong>Problem-Solving:</strong> Ability to identify problems, analyze situations, and implement effective solutions in a timely manner.</p>
+                    <p><strong>Teamwork:</strong> Experienced in working collaboratively within teams, contributing positively to group dynamics and project outcomes.</p>
+                    <p><strong>Adaptability:</strong> Flexible and open to learning new skills and technologies, with the ability to adapt to changing project requirements and environments.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <script>
+        document.querySelectorAll('.skills-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+
+</html>

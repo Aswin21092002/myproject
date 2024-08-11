@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Welcome to My World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .toolbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #0056b3;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .toolbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+            padding: 10px;
+        }
+
+        .toolbar a:hover {
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0056b3;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .contact-info, .work-with-me {
+            flex: 1;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .contact-info h3, .work-with-me h3 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info p, .work-with-me p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        .contact-info p i {
+            color: #0056b3;
+            margin-right: 10px;
+        }
+
+        .contact-info a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-content, .work-content {
+            display: none;
+        }
+
+        .contact-info.open .contact-content, .work-with-me.open .work-content {
+            display: block;
+        }
+
+        .contact-info.open h3::after, .work-with-me.open h3::after {
+            content: "-";
+            font-size: 20px;
+            color: #0056b3;
+        }
+
+        .contact-info h3::after, .work-with-me h3::after {
+            content: "+";
+            font-size: 20px;
+            color: #0056b3;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s;
+            margin-top: 15px;
+        }
+
+        .download-button:hover {
+            background-color: #004494;
+        }
+
+        @media (max-width: 768px) {
+            .toolbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .toolbar a {
+                padding: 10px 0;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toolbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'experience' %}">Experience</a>
+        <a href="{% url 'skills' %}">Skills</a>
+        <a href="{% url 'education' %}">Education</a>
+        <a href="{% url 'project' %}">Projects</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'logout' %}">Logout</a> <!-- Logout button -->
+    </div>
+    <div class="container">
+        <h2>Contact</h2>
+
+        <div class="row">
+            <div class="contact-info">
+                <h3>Contact Details</h3>
+                <div class="contact-content">
+                    <p><i class="fas fa-envelope"></i><strong>Email:</strong> <a href="mailto:aswin21092002@gmail.com">aswin21092002@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i><strong>Phone:</strong> <a href="tel:+916381517031">+91 6381517031</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i><strong>Location:</strong> Chennai, India</p>
+                    <p><i class="fas fa-globe"></i><strong>Website:</strong> <a href="https://www.aswin-n-portfolio.com" target="_blank">www.aswin-n-portfolio.com</a></p>
+                    <p><i class="fab fa-linkedin"></i><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/aswin-n" target="_blank">linkedin.com/in/aswin-n</a></p>
+                    <p><i class="fab fa-github"></i><strong>GitHub:</strong> <a href="https://github.com/aswin-n" target="_blank">github.com/aswin-n</a></p>
+                </div>
+            </div>
+
+            <div class="work-with-me">
+                <h3>Work with Me</h3>
+                <div class="work-content">
+                    <p>If you're interested in collaborating on projects or discussing job opportunities, feel free to reach out using the contact details above.</p>
+                    <p>Looking forward to connecting with you!</p>
+                    <a href="https://flowcv.com/resume/vst8rbqqm5" class="download-button" target="_blank">Download My Resume</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactInfo = document.querySelector('.contact-info');
+            contactInfo.addEventListener('click', function () {
+                this.classList.toggle('open');
+            });
+
+            const workWithMe = document.querySelector('.work-with-me');
+            workWithMe.addEventListener('click', function () {
+                this.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+
+</html>

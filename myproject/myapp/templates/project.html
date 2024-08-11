@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects & Publications | Welcome to My World</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .toolbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #0056b3;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .toolbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+            padding: 10px;
+        }
+
+        .toolbar a:hover {
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0056b3;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            gap: 20px;
+        }
+
+        /* For Projects */
+        .grid-projects {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        /* For Publications */
+        .grid-publications {
+            grid-template-columns: 1fr;
+        }
+
+        /* For Certificates */
+        .grid-certificates {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-item {
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .grid-item h3 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grid-item h4 {
+            color: #0056b3;
+            font-size: 18px;
+            margin-bottom: 5px;
+            font-weight: normal;
+        }
+
+        .grid-item p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .grid-item .duration {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .grid-item .content {
+            display: none;
+            text-align: left;
+        }
+
+        .grid-item.open .content {
+            display: block;
+        }
+
+        .grid-item.open h3::after {
+            content: "-";
+            font-size: 20px;
+            color: #0056b3;
+        }
+
+        .grid-item h3::after {
+            content: "+";
+            font-size: 20px;
+            color: #0056b3;
+        }
+
+        .icon {
+            font-size: 24px;
+            color: #0056b3;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-projects {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-certificates {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-item h3 {
+                font-size: 18px;
+            }
+
+            .grid-item h4 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toolbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'experience' %}">Experience</a>
+        <a href="{% url 'skills' %}">Skills</a>
+        <a href="{% url 'education' %}">Education</a>
+        <a href="{% url 'project' %}">Projects</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'logout' %}">Logout</a> <!-- Logout button -->
+    </div>
+    <div class="container">
+        <h2>Projects</h2>
+        <div class="grid-container grid-projects">
+            <div class="grid-item">
+                <h3><i class="fas fa-robot icon"></i>Guidotronic Bot with LiDAR and AI Voice Assistance</h3>
+                <div class="content">
+                    <h4>2024</h4>
+                    <p>
+                        • Developed a robotic system with LiDAR technology and AI voice assistance for autonomous navigation and voice control.<br>
+                        • Technologies Used: Python, LiDAR, AI Voice Assistance, Embedded Systems.<br>
+                        • GitHub Repository: <a href="https://github.com/your-repo/Guidotronic-Bot" target="_blank">Guidotronic Bot</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <h3><i class="fas fa-briefcase icon"></i>Job Search Web Application</h3>
+                <div class="content">
+                    <h4>2024</h4>
+                    <p>
+                        • Created a job search web application for employers to post job openings and for job seekers to search and apply for jobs.<br>
+                        • Technologies Used: Django, Python, HTML, CSS, JavaScript.<br>
+                        • GitHub Repository: <a href="https://github.com/your-repo/Job-Board" target="_blank">Job-Board</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <h3><i class="fas fa-lock icon"></i>Secure Login System with Math CAPTCHA</h3>
+                <div class="content">
+                    <h4>2024</h4>
+                    <p>
+                        • Designed a secure login page with math-based CAPTCHA to prevent automated login attempts.<br>
+                        • Technologies Used: Python, Django, HTML, CSS, JavaScript.<br>
+                        • GitHub Repository: <a href="https://github.com/your-repo/Login-Page-with-Math-Captcha" target="_blank">Login Page with Math-Captcha</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Publications</h2>
+        <div class="grid-container grid-publications">
+            <div class="grid-item">
+                <h3><i class="fas fa-book icon"></i>An Innovative Guidotronic Bot with Integrated LiDAR and AI Voice Assistance</h3>
+                <div class="content">
+                    <h4>Irish Interdisciplinary Journal of Science & Research (IIJSR)</h4>
+                    <p class="duration">May 15, 2024</p>
+                    <p>
+                        • <a href="https://link-to-certificate" target="_blank">View Certificate</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Certificates</h2>
+        <div class="grid-container grid-certificates">
+            <div class="grid-item">
+                <h3><i class="fas fa-certificate icon"></i>Back-End Engineering Virtual Experience Program</h3>
+                <div class="content">
+                    <h4>LYFT</h4>
+                    <p class="duration">July 27, 2023</p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <h3><i class="fas fa-certificate icon"></i>Software Development Virtual Experience Program</h3>
+                <div class="content">
+                    <h4>DATACOM</h4>
+                    <p class="duration">June 11, 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const gridItems = document.querySelectorAll('.grid-item');
+            gridItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    this.classList.toggle('open');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

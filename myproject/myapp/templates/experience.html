@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | Welcome to My World</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .toolbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #0056b3;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .toolbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+            padding: 10px;
+        }
+
+        .toolbar a:hover {
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0056b3;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .experience-item {
+            margin-bottom: 10px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .experience-item h3 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .experience-item h4 {
+            color: #0056b3;
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        .experience-item p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .experience-item .duration {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .experience-item .experience-content {
+            display: none;
+            padding-top: 10px;
+        }
+
+        .experience-item.open .experience-content {
+            display: block;
+        }
+
+        .experience-item.open h3::after {
+            content: "-";
+        }
+
+        h3::after {
+            content: "+";
+            font-size: 20px;
+            color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .toolbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .toolbar a {
+                padding: 10px 0;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .experience-item h3 {
+                font-size: 22px;
+            }
+
+            .experience-item h4 {
+                font-size: 18px;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const experienceItems = document.querySelectorAll('.experience-item');
+            experienceItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    this.classList.toggle('open');
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="toolbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'experience' %}">Experience</a>
+        <a href="{% url 'skills' %}">Skills</a>
+        <a href="{% url 'education' %}">Education</a>
+        <a href="{% url 'project' %}">Projects</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'logout' %}">Logout</a> <!-- Logout button -->
+    </div>
+    <div class="container">
+        <h2>My Work Experience</h2>
+
+        <div class="experience-item">
+            <h3>Python Full Stack Developer Intern</h3>
+            <div class="experience-content">
+                <h4>Shiash Info Solutions Private Limited</h4>
+                <p class="duration">July 2024 – Present | Chennai, India</p>
+                <p>
+                    • Developed backend services and APIs using Django.<br>
+                    • Designed and implemented responsive user interfaces with HTML, CSS, JavaScript, and AngularJS.<br>
+                    • Optimized database schemas and SQL queries for enhanced performance.
+                </p>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <h3>Software Developer Intern</h3>
+            <div class="experience-content">
+                <h4>Cyber Heals Infotech Private Limited</h4>
+                <p class="duration">Feb 2024 – Jun 2024 | Chennai, India</p>
+                <p>
+                    • Contributed to software application development and maintenance using Python.<br>
+                    • Supported all phases of the software development lifecycle, including planning, design, implementation, and deployment.<br>
+                    • Enhanced programming skills through active learning and practical experience in Python development.
+                </p>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <h3>Python Developer & Data Science Intern</h3>
+            <div class="experience-content">
+                <h4>Techno Hack Edutech Pvt Limited</h4>
+                <p class="duration">Dec 2023 – Feb 2024 | Delhi, India</p>
+                <p>
+                    • Implemented Python code for applications, contributing to the full project lifecycle from planning to deployment.<br>
+                    • Developed a house price prediction model using Python. Managed all aspects of the project, including data preprocessing, feature engineering, and model evaluation.<br>
+                    • Demonstrated strong technical abilities, effective time management, and adaptability to diverse project requirements.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

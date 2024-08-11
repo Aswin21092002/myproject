@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Aswin N - Software Developer Portfolio</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .toolbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #0056b3;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .toolbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+            padding: 10px;
+        }
+
+        .toolbar a:hover {
+            color: #e0e0e0;
+        }
+
+        .hero-section {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 60px 30px;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .hero-section p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0056b3;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .section h3 {
+            color: #333;
+            font-size: 24px;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .section-content {
+            display: none;
+            padding-top: 10px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .section.open .section-content {
+            display: block;
+        }
+
+        .section.open h3::after {
+            content: "-";
+        }
+
+        h3::after {
+            content: "+";
+            font-size: 20px;
+            color: #0056b3;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .cta-buttons a {
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #0056b3;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        .cta-buttons a:hover {
+            background-color: #004494;
+        }
+
+        @media (max-width: 768px) {
+            .toolbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .toolbar a {
+                padding: 10px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 36px;
+            }
+
+            .hero-section p {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.addEventListener('click', function () {
+                    this.classList.toggle('open');
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="toolbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'experience' %}">Experience</a>
+        <a href="{% url 'skills' %}">Skills</a>
+        <a href="{% url 'education' %}">Education</a>
+        <a href="{% url 'project' %}">Projects</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    </div>
+
+    <div class="hero-section">
+        <h1>Aswin N</h1>
+        <p>Python Developer | Web Application Developer | Full Stack Developer</p>
+    </div>
+
+    <div class="container">
+        <h2>Welcome to My World</h2>
+
+        <div class="section" id="about-me">
+            <h3>About Me</h3>
+            <div class="section-content">
+                <p>
+                    <strong>Detail-oriented and driven Software Developer with over six months of hands-on experience in Python and Django.</strong>
+                    Holds a Bachelor's degree in Electronics and Communication Engineering, with a strong foundation in hardware technologies.
+                    Eager to contribute skills and knowledge to a dynamic team, with a focus on continual professional growth and innovation.
+                </p>
+            </div>
+        </div>
+
+        <div class="section" id="accomplishments">
+            <h3>Accomplishments</h3>
+            <div class="section-content">
+                <p>
+                    • Completed a one-month internship at Techno Hacks Edu Tech, where I worked on machine learning and AI projects using Python libraries like Pandas, NumPy, Seaborn, and Matplotlib.<br>
+                    • Developed a predictive model for estimating house prices, helping users understand market trends and make informed real estate decisions.<br>
+                    • Worked on a project titled "Web Application Login Page with Math-Captcha using Python and Django," enhancing web security.<br>
+                    • Completed an internship at Cyber Heals Infotech Pvt Ltd, gaining experience in backend programming and software development.<br>
+                    • Contributed to a final year project titled "Guidotronic Robot integrated with LiDAR and AI Voice Assistance," showcasing skills in robotics and AI.<br>
+                    • Received an offer for an internship at Shiash Info Solutions Private Limited as a Python Full Stack Developer, with a focus on expanding my software development skills.
+                </p>
+            </div>
+        </div>
+
+       
+</body>
+
+</html>
